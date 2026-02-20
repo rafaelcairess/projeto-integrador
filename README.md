@@ -5,6 +5,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ## Tema do Projeto
 **[A DEFINIR]** - 
@@ -14,6 +15,7 @@
 * Guilherme Martins
 * Vitoria Gomez
 * Ana Flávia Ortiz
+* Aline Viana
 
 ## Objetivo da Análise
 O objetivo deste projeto é realizar a extração, o tratamento e a análise exploratória de um conjunto de dados público retirado do Kaggle. O projeto abrangerá a implementação de um processo de ETL (Extract, Transform, Load) utilizando Python e a biblioteca Pandas, com o intuito de limpar e estruturar os dados brutos. Ao final, os dados tratados servirão como base para a criação de um dashboard interativo.
@@ -39,5 +41,5 @@ O dashboard será desenvolvido em Streamlit e terá o objetivo de apresentar os 
 4. **[A DEFINIR]** - *Ex: Gráfico de distribuição ou dispersão.*
 5. **[A DEFINIR]** - *Ex: Tabela interativa com os dados tratados para consulta.*
 
----
-*Projeto desenvolvido para a disciplina de Projeto Integrador (PI) - Desenvolvimento Low Code em Ciência de Dados.*
+## Licença
+Este projeto está licenciado sob a Licença MIT.
