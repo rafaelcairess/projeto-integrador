@@ -26,7 +26,7 @@ O objetivo deste projeto é realizar a extração, o tratamento e a análise exp
 * **Justificativa:** O SQLite foi escolhido por ser um banco de dados relacional leve e estruturado, que opera localmente em um único arquivo `.db`. Ele dispensa a configuração de servidores externos, facilitando o compartilhamento entre a equipe e integrando-se perfeitamente ao Pandas através da função `to_sql`.
 
 ## Planejamento das Tarefas
-* **Etapa 1: Planejamento e Estruturação:** Criação do repositório no GitHub, definição do dataset e elaboração do README. *(Responsáveis: Todos)*
+* **Etapa 1: Planejamento e Estruturação:** Criação do repositório no GitHub, definição do dataset e elaboração do README. *(Responsável: Rafael Caires Pires)*
 * **Etapa 2: Processo de ETL:** Importação do `.csv` do Kaggle e utilização do Pandas para limpeza de dados nulos, padronização de formatos e remoção de inconsistências. *(Responsáveis: [A DEFINIR])*
 * **Etapa 3: Armazenamento:** Conexão e carregamento dos dados tratados no banco de dados SQLite. *(Responsáveis: [A DEFINIR])*
 * **Etapa 4: Desenvolvimento do Dashboard:** Criação de visualizações e métricas interativas utilizando a biblioteca Streamlit. *(Responsáveis: [A DEFINIR])*
