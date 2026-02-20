@@ -7,7 +7,7 @@
 ![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white)
 
 ## Tema do Projeto
-**[A DEFINIR]** - *Ex: Análise do Catálogo de Filmes e Séries da plataforma X.*
+**[A DEFINIR]** - 
 
 ## Integrantes
 * Rafael Caires Pires
