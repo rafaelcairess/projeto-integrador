@@ -6,7 +6,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
 
-Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)** do Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac EAD**.
+Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)** do Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**.
 
 ---
 
