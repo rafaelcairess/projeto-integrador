@@ -83,11 +83,7 @@ Para garantir a qualidade da análise, as seguintes transformações serão apli
 ## 🖥️ Ideia Inicial do Dashboard (Métricas e Visualizações)
 
 O dashboard no Streamlit apresentará as seguintes visões:
-* **Métricas Principais (KPIs):** Total de usuários, emoção predominante e média de tempo de uso.
-* **Gráficos de Distribuição:** Perfis demográficos (idade/gênero) dos usuários analisados.
-* **Análise de Correlação:** Gráficos de dispersão correlacionando tempo de uso vs. emoções.
-* **Comparativo de Plataformas:** Ranking de plataformas por tipo de impacto emocional.
-* **Visualização de Dados Brutos:** Tabela interativa com filtros dinâmicos para exploração.
+**A DEFINIR**
 
 ---
 
