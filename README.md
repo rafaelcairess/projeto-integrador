@@ -1,22 +1,22 @@
-# 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
+# Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
-![GitHub License](https://img.shields.io/badge/license-MIT-green)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
 
-Este projeto foi desenvolvido para a disciplina de **Projeto Integrador (PI) — Desenvolvimento Low Code em Ciência de Dados** do curso de ADS no **Senac EAD**. O objetivo é analisar como diferentes plataformas e padrões de uso de redes sociais influenciam o estado emocional dos usuários.
+Este projeto de análise de dados foi desenvolvido como parte da disciplina de **Projeto Integrador: Desenvolvimento Low Code em Ciência de Dados** do curso de Análise e Desenvolvimento de Sistemas (ADS)
 
 ---
 
-## 👥 Integrantes
+## 👥 Integrantes do Grupo
 
 | Nome | GitHub |
 | :--- | :--- |
-| **Rafael Caires Pires** | [RafaelCairesPires](https://github.com/RafaelCairesPires) |
-| **Guilherme Martins** | — |
-| **Vitoria Gomez** | [@vitmgomez](https://github.com/vitmgomez) |
+| **Rafael Caires Pires** | [Perfil](https://github.com/rafaelcairess) |
+| **Guilherme Martins** | [Perfil](https://github.com/Guifarmartins) |
+| **Vitoria Gomez** | [Perfil](https://github.com/vitmgomez) |
 | **Ana Flávia Ortiz** | — |
 | **Aline Viana** | — |
 
@@ -24,77 +24,73 @@ Este projeto foi desenvolvido para a disciplina de **Projeto Integrador (PI) —
 
 ## 🗄️ Definição da Base de Dados
 
-O dataset escolhido oferece uma visão detalhada do comportamento digital e sentimentos auto-relatados.
+A base de dados selecionada compreende métricas de comportamento digital e indicadores de bem-estar emocional auto-relatados.
 
-* **Fonte:** [Kaggle — Social Media Usage and Emotional Well-Being](https://www.kaggle.com/datasets/emirhanai/social-media-usage-and-emotional-well-being)
-* **Usabilidade:** 10.0 ⭐
-* **Armazenamento:** SQLite (escolhido pela leveza e integração nativa com Python/Pandas).
+* **Dataset:** *Social Media Usage and Emotional Well-Being*
+* **Fonte:** Kaggle (Autor: emirhanai)
+* **Qualidade de Usabilidade:** 10.0 (Kaggle Score)
+* **Armazenamento:** SQLite (escolhido pela portabilidade e integração nativa com o ecossistema Python).
 
-### Colunas do Dataset
+### Dicionário de Dados
 
-| Coluna | Descrição |
+| Variável | Descrição Técnica |
 | :--- | :--- |
-| `User_ID` | Identificador único do usuário |
-| `Age` | Idade |
-| `Gender` | Gênero |
-| `Platform` | Plataforma utilizada (Instagram, TikTok, etc.) |
-| `Daily_Usage_Time` | Tempo de uso diário (em minutos) |
-| `Posts_Per_Day` | Número de publicações diárias |
-| `Likes_Received_Per_Day` | Curtidas recebidas por dia |
-| `Dominant_Emotion` | Emoção predominante (Ex: Feliz, Ansioso, Triste) |
-
-> **Justificativa:** A escolha do SQLite permite um fluxo de ETL (Extract, Transform, Load) simplificado, utilizando o método `to_sql` do Pandas, ideal para projetos ágeis sem a necessidade de servidores de banco de dados complexos.
+| `User_ID` | Identificador único do registro |
+| `Age` | Idade do usuário |
+| `Gender` | Gênero do usuário |
+| `Platform` | Plataforma de rede social analisada |
+| `Daily_Usage_Time` | Tempo médio de exposição diária (minutos) |
+| `Posts_Per_Day` | Volume de postagens diárias |
+| `Likes_Received_Per_Day` | Volume de curtidas recebidas por dia |
+| `Dominant_Emotion` | Classificação da emoção predominante (ex: Ansiedade, Felicidade, Tristeza) |
 
 ---
 
-## 🎯 Objetivo da Análise
+## 🎯 Objetivos da Análise
 
-Investigar a correlação entre o engajamento digital e a saúde mental através de três eixos fundamentais:
+A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo digital e a saúde mental, concentrando-se em:
 
-1.  **Impacto por Plataforma:** Identificar quais redes possuem maior associação com emoções negativas.
-2.  **Tempo de Uso:** Verificar se a exposição prolongada degrada o humor geral.
-3.  **Engajamento Social:** Analisar se a validação externa (curtidas) influencia a emoção dominante.
+1. **Associação por Plataforma:** Mapear a correlação entre plataformas específicas e o índice de emoções negativas.
+2. **Exposição Temporal:** Analisar se o aumento no tempo de uso diário impacta diretamente no humor reportado.
+3. **Validação Social:** Investigar a influência do engajamento (curtidas recebidas) no estado emocional do usuário.
 
 ---
 
-## 📅 Planejamento das Tarefas
+## 📅 Planejamento de Execução
 
-| Etapa | Descrição | Responsável |
+| Etapa | Atividades | Responsável |
 | :--- | :--- | :--- |
-| **1 — Estruturação** | Repositório, Dataset e Documentação (README) | **Rafael Caires Pires** |
-| **2 — ETL** | Limpeza, padronização e tratamento com Pandas | A definir |
-| **3 — Storage** | Carregamento dos dados no SQLite | A definir |
-| **4 — Dashboard** | Desenvolvimento da interface no Streamlit | A definir |
-| **5 — Finalização** | Revisão, testes e gravação da apresentação | **Todos** |
+| **I — Estruturação** | Criação do repositório, documentação inicial e configuração do dataset. | **Rafael Caires Pires** |
+| **II — Processo de ETL** | Tratamento de dados nulos, padronização e limpeza de inconsistências. | A definir |
+| **III — Persistência** | Modelagem e carga dos dados tratados no banco de dados SQLite. | A definir |
+| **IV — Visualização** | Desenvolvimento do dashboard analítico em ambiente Streamlit. | A definir |
+| **V — Entrega Final** | Testes de funcionalidade e revisão técnica. | Todos |
 
 ---
 
-## 🖥️ Arquitetura do Dashboard (Streamlit)
+## 🖥️ Estrutura do Dashboard (Streamlit)
 
-O dashboard será dividido em abas estratégicas para facilitar a interpretação:
+O painel interativo será organizado de forma modular para facilitar a interpretação dos resultados:
 
-* **📊 Sumário (Cards):** Total de usuários, emoção predominante e plataforma com maior tempo de uso.
-* **📈 Perfil dos Usuários:** Distribuição por gênero, idade e plataforma.
-* **😰 Plataforma x Emoção:** Cruzamento de dados para identificar tendências emocionais por app.
-* **⏱️ Tempo de Uso x Humor:** Gráfico de dispersão analisando a correlação entre minutos online e humor.
-* **❤️ Curtidas x Bem-Estar:** Comparação entre engajamento recebido e estado emocional.
-* **📋 Dados Brutos:** Tabela completa com filtros dinâmicos para exploração livre.
+* **Painel de Indicadores (KPIs):** Volume total de amostras, emoção predominante e plataforma com maior retenção.
+* **Análise Demográfica:** Distribuição de usuários segmentada por gênero, faixa etária e plataforma.
+* **Correlação Plataforma x Emoção:** Análise comparativa para identificar tendências emocionais por rede social.
+* **Análise de Exposição:** Gráfico de dispersão relacionando minutos de uso com a variação do humor.
+* **Engajamento e Bem-Estar:** Estudo sobre o impacto quantitativo das curtidas na percepção emocional.
+* **Consulta de Dados:** Módulo de dados brutos com filtros dinâmicos para auditoria.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias e Ferramentas
 
-* **Linguagem:** Python
+* **Linguagem:** Python 3.x
 * **Manipulação de Dados:** Pandas
-* **Banco de Dados:** SQLite
-* **Visualização:** Streamlit
-* **Versionamento:** GitHub
+* **Armazenamento:** SQLite
+* **Interface:** Streamlit
+* **Controle de Versão:** Git / GitHub
 
 ---
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-*Este projeto é parte integrante da formação acadêmica no Senac EAD.*
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para detalhes.
