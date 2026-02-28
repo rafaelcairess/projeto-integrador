@@ -1,3 +1,4 @@
+```markdown
 # 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -27,8 +28,9 @@ Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)**
 
 O projeto utilizará dados que correlacionam o uso de mídias sociais com estados emocionais reportados pelos usuários.
 
-* **Dataset:** *Social Media Usage and Emotional Well-Being*
-* **Fonte:** Kaggle (Autor: emirhanai)
+* **Dataset:** [Social Media Usage and Emotional Well-Being](https://www.kaggle.com/datasets/emirhanai/social-media-usage-and-emotional-well-being)
+* **Autor:** Julian Emirhan Bulut
+* **Fonte:** Kaggle
 * **Usabilidade:** 10.0 (Kaggle Score)
 * **Armazenamento:** SQLite (armazenamento local para garantir portabilidade entre os integrantes).
 
@@ -51,21 +53,23 @@ O projeto utilizará dados que correlacionam o uso de mídias sociais com estado
 
 A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo digital e a saúde mental através dos seguintes eixos:
 
-1.  **Associação por Plataforma:** Identificar quais redes possuem maior correlação com índices de ansiedade ou tristeza.
-2.  **Exposição Temporal:** Verificar se o aumento do tempo de uso diário degrada o humor geral.
-3.  **Engajamento e Recompensa:** Investigar se o volume de curtidas recebidas influencia a emoção dominante.
+1. **Associação por Plataforma:** Identificar quais redes possuem maior correlação com índices de ansiedade ou tristeza.
+2. **Exposição Temporal:** Verificar se o aumento do tempo de uso diário degrada o humor geral.
+3. **Engajamento e Recompensa:** Investigar se o volume de curtidas recebidas influencia a emoção dominante.
 
 ---
 
 ## 📅 Planejamento das Tarefas e Cronograma
 
+> ⚠️ Este projeto cobre apenas a **Primeira Etapa**. As etapas 2 a 5 serão desenvolvidas no próximo semestre.
+
 | Etapa | Atividade | Responsável | Status |
 | :--- | :--- | :--- | :--- |
-| **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | Concluído |
-| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | A definir | Pendente |
-| **3** | Persistência: Modelagem e carga dos dados no SQLite. | A definir | Pendente |
-| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | A definir | Pendente |
-| **5** | Documentação final, testes e revisão técnica. | Todos | Pendente |
+| **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
+| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | A definir | 🔜 Próximo semestre |
+| **3** | Persistência: Modelagem e carga dos dados no SQLite. | A definir | 🔜 Próximo semestre |
+| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | A definir | 🔜 Próximo semestre |
+| **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Próximo semestre |
 
 ---
 
@@ -93,3 +97,4 @@ O dashboard no Streamlit apresentará as seguintes visões:
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT.
+```
