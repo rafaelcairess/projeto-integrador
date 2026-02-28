@@ -1,4 +1,3 @@
-```markdown
 # 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -61,8 +60,6 @@ A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo
 
 ## 📅 Planejamento das Tarefas e Cronograma
 
-> ⚠️ Este projeto cobre apenas a **Primeira Etapa**. As etapas 2 a 5 serão desenvolvidas no próximo semestre.
-
 | Etapa | Atividade | Responsável | Status |
 | :--- | :--- | :--- | :--- |
 | **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
@@ -97,4 +94,3 @@ O dashboard no Streamlit apresentará as seguintes visões:
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT.
-```
