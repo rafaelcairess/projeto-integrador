@@ -19,7 +19,7 @@ Este projeto de análise de dados foi desenvolvido como parte da disciplina de *
 | **Vitoria Gomez** | [Perfil](https://github.com/vitmgomez) |
 | **Ana Flávia Ortiz** | — |
 | **Aline Viana** | — |
-
+| **João** | — |
 ---
 
 ## 🗄️ Definição da Base de Dados
