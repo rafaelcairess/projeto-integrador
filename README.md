@@ -1,4 +1,4 @@
-# Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
+# 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
@@ -6,7 +6,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
 
-Este projeto de análise de dados foi desenvolvido como parte da disciplina de **Projeto Integrador: Desenvolvimento Low Code em Ciência de Dados** do curso de Análise e Desenvolvimento de Sistemas (ADS)
+Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)** do Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac EAD**.
 
 ---
 
@@ -14,26 +14,27 @@ Este projeto de análise de dados foi desenvolvido como parte da disciplina de *
 
 | Nome | GitHub |
 | :--- | :--- |
-| **Rafael Caires Pires** | [Perfil](https://github.com/rafaelcairess) |
-| **Guilherme Martins** | [Perfil](https://github.com/Guifarmartins) |
-| **Vitoria Gomez** | [Perfil](https://github.com/vitmgomez) |
+| **Rafael Caires Pires** | [rafaelcairess](https://github.com/rafaelcairess) |
+| **Guilherme Martins** | [Guifarmartins](https://github.com/Guifarmartins) |
+| **Vitoria Gomez** | [vitmgomez](https://github.com/vitmgomez) |
 | **Ana Flávia Ortiz** | — |
 | **Aline Viana** | — |
 | **João** | — |
+
 ---
 
 ## 🗄️ Definição da Base de Dados
 
-A base de dados selecionada compreende métricas de comportamento digital e indicadores de bem-estar emocional auto-relatados.
+O projeto utilizará dados que correlacionam o uso de mídias sociais com estados emocionais reportados pelos usuários.
 
 * **Dataset:** *Social Media Usage and Emotional Well-Being*
 * **Fonte:** Kaggle (Autor: emirhanai)
-* **Qualidade de Usabilidade:** 10.0 (Kaggle Score)
-* **Armazenamento:** SQLite (escolhido pela portabilidade e integração nativa com o ecossistema Python).
+* **Usabilidade:** 10.0 (Kaggle Score)
+* **Armazenamento:** SQLite (armazenamento local para garantir portabilidade entre os integrantes).
 
 ### Dicionário de Dados
 
-| Variável | Descrição Técnica |
+| Variável | Descrição |
 | :--- | :--- |
 | `User_ID` | Identificador único do registro |
 | `Age` | Idade do usuário |
@@ -42,55 +43,53 @@ A base de dados selecionada compreende métricas de comportamento digital e indi
 | `Daily_Usage_Time` | Tempo médio de exposição diária (minutos) |
 | `Posts_Per_Day` | Volume de postagens diárias |
 | `Likes_Received_Per_Day` | Volume de curtidas recebidas por dia |
-| `Dominant_Emotion` | Classificação da emoção predominante (ex: Ansiedade, Felicidade, Tristeza) |
+| `Dominant_Emotion` | Emoção predominante (Ansiedade, Felicidade, Tristeza, etc.) |
 
 ---
 
 ## 🎯 Objetivos da Análise
 
-A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo digital e a saúde mental, concentrando-se em:
+A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo digital e a saúde mental através dos seguintes eixos:
 
-1. **Associação por Plataforma:** Mapear a correlação entre plataformas específicas e o índice de emoções negativas.
-2. **Exposição Temporal:** Analisar se o aumento no tempo de uso diário impacta diretamente no humor reportado.
-3. **Validação Social:** Investigar a influência do engajamento (curtidas recebidas) no estado emocional do usuário.
-
----
-
-## 📅 Planejamento de Execução
-
-| Etapa | Atividades | Responsável |
-| :--- | :--- | :--- |
-| **I — Estruturação** | Criação do repositório, documentação inicial e configuração do dataset. | **Rafael Caires Pires** |
-| **II — Processo de ETL** | Tratamento de dados nulos, padronização e limpeza de inconsistências. | A definir |
-| **III — Persistência** | Modelagem e carga dos dados tratados no banco de dados SQLite. | A definir |
-| **IV — Visualização** | Desenvolvimento do dashboard analítico em ambiente Streamlit. | A definir |
-| **V — Entrega Final** | Testes de funcionalidade e revisão técnica. | Todos |
+1.  **Associação por Plataforma:** Identificar quais redes possuem maior correlação com índices de ansiedade ou tristeza.
+2.  **Exposição Temporal:** Verificar se o aumento do tempo de uso diário degrada o humor geral.
+3.  **Engajamento e Recompensa:** Investigar se o volume de curtidas recebidas influencia a emoção dominante.
 
 ---
 
-## 🖥️ Estrutura do Dashboard (Streamlit)
+## 📅 Planejamento das Tarefas e Cronograma
 
-O painel interativo será organizado de forma modular para facilitar a interpretação dos resultados:
-
-* **Painel de Indicadores (KPIs):** Volume total de amostras, emoção predominante e plataforma com maior retenção.
-* **Análise Demográfica:** Distribuição de usuários segmentada por gênero, faixa etária e plataforma.
-* **Correlação Plataforma x Emoção:** Análise comparativa para identificar tendências emocionais por rede social.
-* **Análise de Exposição:** Gráfico de dispersão relacionando minutos de uso com a variação do humor.
-* **Engajamento e Bem-Estar:** Estudo sobre o impacto quantitativo das curtidas na percepção emocional.
-* **Consulta de Dados:** Módulo de dados brutos com filtros dinâmicos para auditoria.
+| Etapa | Atividade | Responsável | Status |
+| :--- | :--- | :--- | :--- |
+| **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | Concluído |
+| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | A definir | Pendente |
+| **3** | Persistência: Modelagem e carga dos dados no SQLite. | A definir | Pendente |
+| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | A definir | Pendente |
+| **5** | Documentação final, testes e revisão técnica. | Todos | Pendente |
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas
+## 🛠️ Transformações de Dados Pretendidas
 
-* **Linguagem:** Python 3.x
-* **Manipulação de Dados:** Pandas
-* **Armazenamento:** SQLite
-* **Interface:** Streamlit
-* **Controle de Versão:** Git / GitHub
+Para garantir a qualidade da análise, as seguintes transformações serão aplicadas via **Pandas**:
+* **Limpeza:** Tratamento de valores ausentes ou inconsistentes.
+* **Padronização:** Normalização dos nomes das plataformas e categorias de emoções.
+* **Agregação:** Criação de métricas agrupadas por faixa etária e gênero para facilitar a visualização.
+* **Carga:** Exportação do DataFrame limpo para uma tabela estruturada no **SQLite**.
+
+---
+
+## 🖥️ Ideia Inicial do Dashboard (Métricas e Visualizações)
+
+O dashboard no Streamlit apresentará as seguintes visões:
+* **Métricas Principais (KPIs):** Total de usuários, emoção predominante e média de tempo de uso.
+* **Gráficos de Distribuição:** Perfis demográficos (idade/gênero) dos usuários analisados.
+* **Análise de Correlação:** Gráficos de dispersão correlacionando tempo de uso vs. emoções.
+* **Comparativo de Plataformas:** Ranking de plataformas por tipo de impacto emocional.
+* **Visualização de Dados Brutos:** Tabela interativa com filtros dinâmicos para exploração.
 
 ---
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença MIT.
