@@ -12,9 +12,9 @@ Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)**
 | **Rafael Caires Pires** | [rafaelcairess](https://github.com/rafaelcairess) |
 | **Guilherme Martins** | [Guifarmartins](https://github.com/Guifarmartins) |
 | **Vitoria Gomez** | [vitmgomez](https://github.com/vitmgomez) |
-| **Ana Flávia Ortiz** | — |
+| **Ana Flávia Ortiz** | [Ana-Flavia1303](https://github.com/Ana-Flavia1303) |
 | **Aline Viana** | — |
-| **João** | — |
+| **João** | [euJonh](https://github.com/euJonh) |
 ---
 ## 🗄️ Definição da Base de Dados
 O projeto utilizará dados que correlacionam o uso de mídias sociais com estados emocionais reportados pelos usuários.
@@ -62,8 +62,9 @@ O dashboard no Streamlit apresentará as seguintes visões:
 
 **1. Visão Geral (Filtros e KPIs)**
 
-Filtros globais no topo ou barra lateral: **Faixa Etária**, **Gênero** e **Plataforma**.
+No topo (ou na barra lateral do Streamlit), filtros globais: **Faixa Etária**, **Gênero** e **Plataforma**.
 
+**KPIs Principais (Cards):**
 * **Média de Tempo de Uso:** Exibir em minutos ou horas.
 * **Emoção Mais Frequente:** Qual sentimento domina o dataset atual.
 * **Média de Engajamento:** Média de curtidas recebidas por post.
@@ -72,24 +73,30 @@ Filtros globais no topo ou barra lateral: **Faixa Etária**, **Gênero** e **Pla
 
 **Eixo 1: Associação por Plataforma**
 
-* **Gráfico de Barras Empilhadas (100%):** No eixo X as **Plataformas** e no eixo Y a proporção de **Emoções Dominantes**. Mostrará se o Instagram, por exemplo, tem uma fatia de "Ansiedade" maior que o WhatsApp.
-* **TreeMap:** Volume de usuários por plataforma, onde a cor representa a "Emoção Predominante" média daquele grupo.
+* **Gráfico de Barras Empilhadas (100%):** No eixo X as **Plataformas** e no eixo Y a proporção de **Emoções Dominantes**.
+  * *Insight:* Isso mostrará visualmente se o Instagram, por exemplo, tem uma fatia de "Ansiedade" maior que o WhatsApp.
+* **TreeMap:** Para mostrar o volume de usuários por plataforma, onde a cor representa a "Emoção Predominante" média daquele grupo.
 
-**Eixo 2: Exposição Temporal**
+**Eixo 2: Exposição Temporal (O fator "Tempo")**
 
-* **Scatter Plot:** Eixo X (**Daily Usage Time**) vs. Eixo Y (**Posts per Day**), com cores dos pontos representando a **Dominant Emotion**. Ajuda a ver se quem passa mais tempo tende a cair em emoções negativas.
-* **Gráfico de Violino:** Comparando o tempo de uso para cada emoção. *"Pessoas que relatam Tristeza passam, em média, mais tempo logadas do que as que relatam Felicidade?"*
+* **Gráfico de Dispersão (Scatter Plot):** Eixo X (**Daily Usage Time**) vs. Eixo Y (**Posts per Day**). Use as cores dos pontos para representar a **Dominant Emotion**.
+  * *Insight:* Ajuda a ver se quem passa mais tempo tende a cair em emoções negativas.
+* **Gráfico de Densidade/Violino:** Comparando o tempo de uso para cada emoção.
+  * *Insight:* "Pessoas que relatam Tristeza passam, em média, mais tempo logadas do que as que relatam Felicidade?"
 
 **Eixo 3: Engajamento e Recompensa**
 
 * **Histograma de Curtidas:** Para entender a distribuição de "recompensa" dos usuários.
-* **Boxplot por Emoção:** Comparando **Likes Received** por **Dominant Emotion**. Valida a hipótese de que baixo engajamento pode estar correlacionado a sentimentos de Solidão ou Tristeza.
+* **Gráfico de Barras de Erro ou Boxplot:** Comparando **Likes Received** por **Dominant Emotion**.
+  * *Insight:* Validar a hipótese de que baixo engajamento (poucas curtidas) pode estar correlacionado a sentimentos de Solidão ou Tristeza.
 
-**3. Feature Engineering planejada para o ETL**
+**3. Sugestão de Transformação de Dados (Feature Engineering)**
 
-* **Faixa Etária (Binning):** Transformar a idade em categorias: *18-24, 25-34, 35-44, 45+*.
-* **Índice de Engajamento:** Métrica `Likes_Received / Posts_Per_Day` para medir a qualidade do retorno recebido.
-* **Polaridade da Emoção:** Mapeamento das emoções para *Positiva, Neutra ou Negativa*.
+Para o dashboard ficar mais profissional, serão criadas as seguintes colunas extras no Pandas durante a fase de ETL:
+
+1. **Faixa Etária (Binning):** Transformar a idade exata em categorias: *18-24, 25-34, 35-44, 45+*. Isso melhora muito a visualização de grupos.
+2. **Índice de Engajamento:** Criar uma métrica `Likes_Received / Posts_Per_Day` para entender a "qualidade" do retorno que o usuário recebe.
+3. **Polaridade da Emoção:** Mapear as emoções para *Positiva, Neutra ou Negativa*.
 ---
 ## 📄 Licença
 Este projeto está licenciado sob a Licença MIT.
