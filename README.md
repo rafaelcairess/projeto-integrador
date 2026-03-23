@@ -31,7 +31,7 @@ Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento
 | **Guilherme Martins** | [Guifarmartins](https://github.com/Guifarmartins) |
 | **Vitoria Gomez** | [vitmgomez](https://github.com/vitmgomez) |
 | **Ana Flávia Ortiz** | [Ana-Flavia1303](https://github.com/Ana-Flavia1303) |
-| **Aline Viana** | — |
+| **Aline Viana** | [Alineviana3589](https://github.com/Alineviana3589) |
 | **João** | [euJonh](https://github.com/euJonh) |
 
 ---
