@@ -1,17 +1,12 @@
 # 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
-
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
-
 Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)** do Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**.
-
 ---
-
 ## 👥 Integrantes do Grupo
-
 | Nome | GitHub |
 | :--- | :--- |
 | **Rafael Caires Pires** | [rafaelcairess](https://github.com/rafaelcairess) |
@@ -20,21 +15,15 @@ Este repositório documenta a **Primeira Etapa (Planejamento e Estruturação)**
 | **Ana Flávia Ortiz** | — |
 | **Aline Viana** | — |
 | **João** | — |
-
 ---
-
 ## 🗄️ Definição da Base de Dados
-
 O projeto utilizará dados que correlacionam o uso de mídias sociais com estados emocionais reportados pelos usuários.
-
 * **Dataset:** [Social Media Usage and Emotional Well-Being](https://www.kaggle.com/datasets/emirhanai/social-media-usage-and-emotional-well-being)
 * **Autor:** Julian Emirhan Bulut
 * **Fonte:** Kaggle
 * **Usabilidade:** 10.0 (Kaggle Score)
 * **Armazenamento:** SQLite (armazenamento local para garantir portabilidade entre os integrantes).
-
 ### Dicionário de Dados
-
 | Variável | Descrição |
 | :--- | :--- |
 | `User_ID` | Identificador único do registro |
@@ -45,48 +34,62 @@ O projeto utilizará dados que correlacionam o uso de mídias sociais com estado
 | `Posts_Per_Day` | Volume de postagens diárias |
 | `Likes_Received_Per_Day` | Volume de curtidas recebidas por dia |
 | `Dominant_Emotion` | Emoção predominante (Ansiedade, Felicidade, Tristeza, etc.) |
-
 ---
-
 ## 🎯 Objetivos da Análise
-
 A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo digital e a saúde mental através dos seguintes eixos:
-
 1. **Associação por Plataforma:** Identificar quais redes possuem maior correlação com índices de ansiedade ou tristeza.
 2. **Exposição Temporal:** Verificar se o aumento do tempo de uso diário degrada o humor geral.
 3. **Engajamento e Recompensa:** Investigar se o volume de curtidas recebidas influencia a emoção dominante.
-
 ---
-
 ## 📅 Planejamento das Tarefas e Cronograma
-
 | Etapa | Atividade | Responsável | Status |
 | :--- | :--- | :--- | :--- |
 | **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
-| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | A definir | 🔜 Próximo semestre |
-| **3** | Persistência: Modelagem e carga dos dados no SQLite. | A definir | 🔜 Próximo semestre |
-| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | A definir | 🔜 Próximo semestre |
+| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | Guilherme Martins | 🔜 Próximo semestre |
+| **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | 🔜 Próximo semestre |
+| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz e Vitoria Gomez | 🔜 Próximo semestre |
 | **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Próximo semestre |
-
 ---
-
 ## 🛠️ Transformações de Dados Pretendidas
-
 Para garantir a qualidade da análise, as seguintes transformações serão aplicadas via **Pandas**:
 * **Limpeza:** Tratamento de valores ausentes ou inconsistentes.
 * **Padronização:** Normalização dos nomes das plataformas e categorias de emoções.
 * **Agregação:** Criação de métricas agrupadas por faixa etária e gênero para facilitar a visualização.
 * **Carga:** Exportação do DataFrame limpo para uma tabela estruturada no **SQLite**.
-
 ---
-
 ## 🖥️ Ideia Inicial do Dashboard (Métricas e Visualizações)
-
 O dashboard no Streamlit apresentará as seguintes visões:
-**A DEFINIR**
 
+**1. Visão Geral (Filtros e KPIs)**
+
+Filtros globais no topo ou barra lateral: **Faixa Etária**, **Gênero** e **Plataforma**.
+
+* **Média de Tempo de Uso:** Exibir em minutos ou horas.
+* **Emoção Mais Frequente:** Qual sentimento domina o dataset atual.
+* **Média de Engajamento:** Média de curtidas recebidas por post.
+
+**2. Análise por Eixo Temático**
+
+**Eixo 1: Associação por Plataforma**
+
+* **Gráfico de Barras Empilhadas (100%):** No eixo X as **Plataformas** e no eixo Y a proporção de **Emoções Dominantes**. Mostrará se o Instagram, por exemplo, tem uma fatia de "Ansiedade" maior que o WhatsApp.
+* **TreeMap:** Volume de usuários por plataforma, onde a cor representa a "Emoção Predominante" média daquele grupo.
+
+**Eixo 2: Exposição Temporal**
+
+* **Scatter Plot:** Eixo X (**Daily Usage Time**) vs. Eixo Y (**Posts per Day**), com cores dos pontos representando a **Dominant Emotion**. Ajuda a ver se quem passa mais tempo tende a cair em emoções negativas.
+* **Gráfico de Violino:** Comparando o tempo de uso para cada emoção. *"Pessoas que relatam Tristeza passam, em média, mais tempo logadas do que as que relatam Felicidade?"*
+
+**Eixo 3: Engajamento e Recompensa**
+
+* **Histograma de Curtidas:** Para entender a distribuição de "recompensa" dos usuários.
+* **Boxplot por Emoção:** Comparando **Likes Received** por **Dominant Emotion**. Valida a hipótese de que baixo engajamento pode estar correlacionado a sentimentos de Solidão ou Tristeza.
+
+**3. Feature Engineering planejada para o ETL**
+
+* **Faixa Etária (Binning):** Transformar a idade em categorias: *18-24, 25-34, 35-44, 45+*.
+* **Índice de Engajamento:** Métrica `Likes_Received / Posts_Per_Day` para medir a qualidade do retorno recebido.
+* **Polaridade da Emoção:** Mapeamento das emoções para *Positiva, Neutra ou Negativa*.
 ---
-
 ## 📄 Licença
-
 Este projeto está licenciado sob a Licença MIT.
