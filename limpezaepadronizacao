@@ -1,0 +1,61 @@
+---------------------LIMPEZA E PADRONIZAÇAO---------------------------
+import pandas as pd
+pd.options.mode.chained_assignment = None
+
+df_csv = pd.read_csv(
+    "/kaggle/test.csv"
+)
+df_csv
+
+df_csv.head(10)
+
+df_csv.info()
+
+df_csv.describe()
+
+df_csv.isnull().sum()
+
+total_duplicadas = df_csv.duplicated().sum()
+print(f"Total de linhas duplicadas: {total_duplicadas}")
+
+df_csv = df_csv.drop_duplicates(keep="first")
+
+total_duplicadas = df_csv.duplicated().sum()
+print(f"Total de linhas duplicadas: {total_duplicadas}")
+
+correcoes = {
+"snapchat" : "Snapchat",
+"telegram": "Telegram",
+"linkedin": "Linkedin",
+"facebook": "Facebook",
+"instagram": "Instagram",
+"twitter": "twitter",
+"whatsapp": "Whatsapp",                            
+}
+df_csv["Platform"] = df_csv["Platform"].replace(correcoes)
+
+correcao = {
+"female" : "Female",
+"male": "Male",
+"non-binary": "Non-binary",
+}
+df_csv["Gender"] = df_csv["Gender"].replace(correcao)
+
+correcaoa = {
+"female" : "Female",
+"male": "Male",
+"non-binary": "Non-binary",
+}
+df_csv["Gender"] = df_csv["Gender"].replace(correcaoa)
+
+print(df_csv["Dominant_Emotion"].unique())
+
+correcaob = {
+"neutral" : "Neutral",
+"anxiety": "Anxiety",
+"sadness": "Sadness",
+"happiness": "Happiness",
+"boredom": "Boredom",
+"anger": "Anger",                                          
+}
+df_csv["Dominant_Emotion"] = df_csv["Dominant_Emotion"].replace(correcaob)
