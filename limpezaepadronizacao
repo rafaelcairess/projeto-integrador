@@ -2,9 +2,11 @@
 import pandas as pd
 pd.options.mode.chained_assignment = None
 
-df_csv = pd.read_csv(
-    "/kaggle/test.csv"
-)
+df_csv = pd.concat([
+    pd.read_csv("data/raw/train.csv", on_bad_lines="skip"),
+    pd.read_csv("data/raw/test.csv",  on_bad_lines="skip"),
+    pd.read_csv("data/raw/val.csv",   on_bad_lines="skip"),
+], ignore_index=True)
 df_csv
 
 df_csv.head(10)
@@ -29,7 +31,7 @@ correcoes = {
 "linkedin": "Linkedin",
 "facebook": "Facebook",
 "instagram": "Instagram",
-"twitter": "twitter",
+"twitter": "Twitter",
 "whatsapp": "Whatsapp",                            
 }
 df_csv["Platform"] = df_csv["Platform"].replace(correcoes)
@@ -40,13 +42,6 @@ correcao = {
 "non-binary": "Non-binary",
 }
 df_csv["Gender"] = df_csv["Gender"].replace(correcao)
-
-correcaoa = {
-"female" : "Female",
-"male": "Male",
-"non-binary": "Non-binary",
-}
-df_csv["Gender"] = df_csv["Gender"].replace(correcaoa)
 
 print(df_csv["Dominant_Emotion"].unique())
 
