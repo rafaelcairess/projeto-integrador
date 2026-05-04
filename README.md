@@ -1,13 +1,13 @@
 # 🧠 Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
-![Status](https://img.shields.io/badge/Status-Planejamento_Concluído-brightgreen)
+![Status](https://img.shields.io/badge/Status-Em_Execução-blue)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
 
-Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**. Atualmente, o projeto encontra-se na **Primeira Etapa (Planejamento e Estruturação)**.
+Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**. Atualmente, o projeto encontra-se na **Segunda Etapa (Execução)**.
 
 <details>
   <summary><b>📂 Índice (Clique para expandir)</b></summary>
@@ -75,10 +75,10 @@ A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo
 | Etapa | Atividade | Responsável | Status |
 | :--- | :--- | :--- | :--- |
 | **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
-| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | Guilherme Martins | 🔜 Próximo semestre |
-| **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | 🔜 Próximo semestre |
-| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz, Vitoria Gomez e Aline Viana | 🔜 Próximo semestre |
-| **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Próximo semestre |
+| **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | Guilherme Martins | ✅ Concluído |
+| **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | 🔜 Em andamento |
+| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz, Vitoria Gomez e Aline Viana | 🔜 Em andamento |
+| **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Em andamento |
 
 ---
 
