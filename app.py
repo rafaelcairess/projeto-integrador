@@ -31,6 +31,10 @@ with col2:
 
 with col3:
     st.metric(label="Curtidas por dia", value=round(media_engajamento, 1))
+ 
+st.title("Associação por plataforma")
+st.divider()
+
 #Eixo 1 - Associação por plataforma
 df_contagem = df.groupby(['Platform', 'Dominant_Emotion']).size().reset_index(name='Contagem')
 
