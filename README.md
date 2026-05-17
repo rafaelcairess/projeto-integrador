@@ -9,6 +9,12 @@
 
 Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**. Atualmente, o projeto encontra-se na **Segunda Etapa (Execução)**.
 
+## Dashboard Online
+
+Acesse o dashboard publicado: [clique aqui](https://projeto-integrador-dodphybvdpndcejzzmzmyy.streamlit.app)
+
+---
+
 <details>
   <summary><b>📂 Índice (Clique para expandir)</b></summary>
   
@@ -76,7 +82,7 @@ A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo
 | :--- | :--- | :--- | :--- |
 | **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
 | **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | Guilherme Martins | ✅ Concluído |
-| **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | 🔜 Em andamento |
+| **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | ✅ Concluído |
 | **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz, Vitoria Gomez e Aline Viana | 🔜 Em andamento |
 | **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Em andamento |
 
@@ -107,22 +113,22 @@ No topo (ou na barra lateral do Streamlit), estarão os filtros globais: **Faixa
 ### 2. Análise por Eixo Temático
 
 **Eixo 1: Associação por Plataforma**
-* **Gráfico de Barras Empilhadas (100%):** No eixo X as **Plataformas** e no eixo Y a proporção de **Emoções Dominantes**. *(Insight: mostrará visualmente se o Instagram tem uma fatia de "Ansiedade" maior que o WhatsApp, por exemplo).*
+* **Gráfico de Barras Empilhadas (100%):** No eixo X as **Plataformas** e no eixo Y a proporção de **Emoções Dominantes**.
 * **TreeMap:** Para mostrar o volume de usuários por plataforma, onde a cor representa a "Emoção Predominante" média daquele grupo.
 
 **Eixo 2: Exposição Temporal (O fator "Tempo")**
-* **Gráfico de Dispersão (Scatter Plot):** Eixo X (`Daily Usage Time`) vs. Eixo Y (`Posts per Day`), usando as cores dos pontos para representar a `Dominant Emotion`. *(Insight: ver se quem passa mais tempo tende a cair em emoções negativas).*
-* **Gráfico de Densidade/Violino:** Comparando o tempo de uso para cada emoção. *(Insight: "Pessoas que relatam Tristeza passam, em média, mais tempo logadas do que as que relatam Felicidade?")*
+* **Gráfico de Dispersão (Scatter Plot):** Eixo X (`Daily Usage Time`) vs. Eixo Y (`Posts per Day`), usando as cores dos pontos para representar a `Dominant Emotion`.
+* **Gráfico de Densidade/Violino:** Comparando o tempo de uso para cada emoção.
 
 **Eixo 3: Engajamento e Recompensa**
 * **Histograma de Curtidas:** Para entender a distribuição de "recompensa" dos usuários.
-* **Gráfico de Barras de Erro ou Boxplot:** Comparando `Likes Received` por `Dominant Emotion`. *(Insight: Validar a hipótese de que baixo engajamento pode estar correlacionado a sentimentos de Solidão ou Tristeza).*
+* **Boxplot:** Comparando `Likes Received` por `Dominant Emotion`.
 
-### 3. Sugestões de Feature Engineering
-Para o dashboard ficar mais profissional, as seguintes colunas extras serão criadas no Pandas durante a fase de ETL:
-1. **Faixa Etária (Binning):** Transformar a idade exata em categorias (*18-24, 25-34, 35-44, 45+*).
-2. **Índice de Engajamento:** Criar uma métrica baseada na razão entre curtidas e posts ($\frac{\text{Likes Received}}{\text{Posts Per Day}}$) para entender a "qualidade" do retorno que o usuário recebe.
-3. **Polaridade da Emoção:** Mapear as emoções para *Positiva, Neutra ou Negativa*.
+### 3. Feature Engineering aplicado
+As seguintes colunas foram criadas durante o ETL:
+1. **Faixa Etária (Binning):** Idades agrupadas em categorias (18-24, 25-34, 35-44, 45+).
+2. **Índice de Engajamento:** Razão entre curtidas e posts por dia.
+3. **Polaridade da Emoção:** Emoções mapeadas para Positiva, Neutra ou Negativa.
 
 ---
 
