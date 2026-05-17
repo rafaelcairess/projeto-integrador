@@ -29,6 +29,7 @@ with st.sidebar:
     # Faixa etária (bins definidos no planejamento do projeto)
     bins   = [0, 24, 34, 44, 120]
     labels = ['18–24', '25–34', '35–44', '45+']
+    df_raw['Age'] = pd.to_numeric(df_raw['Age'], errors='coerce')
     df_raw['Faixa_Etaria'] = pd.cut(df_raw['Age'], bins=bins, labels=labels, right=True)
     sel_faixa = st.multiselect('Faixa Etária', options=labels, default=labels)
 
