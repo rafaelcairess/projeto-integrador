@@ -39,12 +39,13 @@ with st.sidebar:
     st.header("🎨 Cores por Emoção")
     emocoes = sorted(df_raw['Dominant_Emotion'].dropna().unique())
     cores_padrao = {
-        "Happiness": "#4CAF50",
-        "Sadness":   "#5C9BD6",
-        "Anxiety":   "#FF7043",
-        "Anger":     "#E53935",
-        "Neutral":   "#90A4AE",
-        "Boredom":   "#AB47BC",
+        "Happiness":  "#4CAF50",
+        "Sadness":    "#5C9BD6",
+        "Anxiety":    "#FF7043",
+        "Anger":      "#E53935",
+        "Neutral":    "#90A4AE",
+        "Boredom":    "#AB47BC",
+        "Agression":  "#FF6F00",
     }
     EMOTION_COLORS = {}
     for emocao in emocoes:
@@ -127,6 +128,6 @@ fig_box = px.box(
     color='Dominant_Emotion',
     color_discrete_map=EMOTION_COLORS,
     labels={'Dominant_Emotion': 'Emoção dominante', 'Likes_Received_Per_Day': 'Curtidas recebidas por dia'},
-    showlegend=False,
 )
+fig_box.update_layout(showlegend=False)
 st.plotly_chart(fig_box, use_container_width=True)
