@@ -164,3 +164,4 @@ fig_box = px.box(
     labels={'Dominant_Emotion_PT': 'Emoção dominante', 'Likes_Received_Per_Day': 'Curtidas recebidas por dia'},
 )
 fig_box.update_layout(showlegend=False)
+st.plotly_chart(fig_box, use_container_width=True)
