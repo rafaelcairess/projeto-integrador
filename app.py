@@ -74,7 +74,7 @@ with st.sidebar:
     cores_padrao = {
         'Felicidade': '#4CAF50',
         'Tristeza':   '#5C9BD6',
-        'Ansiedade':  '#FF7043',
+        'Ansiedade':  '#00BCD4',
         'Raiva':      '#E53935',
         'Neutro':     '#90A4AE',
         'Tédio':      '#AB47BC',
@@ -164,4 +164,3 @@ fig_box = px.box(
     labels={'Dominant_Emotion_PT': 'Emoção dominante', 'Likes_Received_Per_Day': 'Curtidas recebidas por dia'},
 )
 fig_box.update_layout(showlegend=False)
-st.plotly_chart(fig_box, use_container_width=True)
