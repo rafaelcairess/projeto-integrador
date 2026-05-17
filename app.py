@@ -1,6 +1,7 @@
 import streamlit as st
 import sqlite3
 import pandas as pd 
+import plotly.express as px
 
 # Conecta ao banco de dados
 def create_conection():
@@ -30,3 +31,14 @@ with col2:
 
 with col3:
     st.metric(label="Curtidas por dia", value=round(media_engajamento, 1))
+#Eixo 1 - Associação por plataforma
+df_contagem = df.groupby(['Platform', 'Dominant_Emotion']).size().reset_index(name='Contagem')
+
+st.bar_chart(
+    data=df_contagem,
+    x="Platform",
+    y="Contagem",
+    color="Dominant_Emotion",
+    x_label="Plataforma",
+    y_label="Quantidade de Emoções"
+)
