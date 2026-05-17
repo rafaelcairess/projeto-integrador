@@ -16,6 +16,29 @@ df_raw = create_conection()
 # Configuração da página
 st.set_page_config(page_title="Redes Sociais & Bem-Estar Emocional", layout="wide")
 
+# Tradução de gênero (banco -> exibição)
+genero_traducao = {
+    'Female':     'Feminino',
+    'Male':       'Masculino',
+    'Non-binary': 'Não-binário',
+}
+genero_reverso = {v: k for k, v in genero_traducao.items()}
+
+# Tradução de emoções (banco -> exibição)
+emocao_traducao = {
+    'Happiness': 'Felicidade',
+    'Sadness':   'Tristeza',
+    'Anxiety':   'Ansiedade',
+    'Anger':     'Raiva',
+    'Neutral':   'Neutro',
+    'Boredom':   'Tédio',
+    'Agression': 'Agressão',
+}
+emocao_reverso = {v: k for k, v in emocao_traducao.items()}
+
+# Aplica tradução de emoções no dataframe
+df_raw['Dominant_Emotion_PT'] = df_raw['Dominant_Emotion'].map(emocao_traducao).fillna(df_raw['Dominant_Emotion'])
+
 # Sidebar - Filtros globais
 with st.sidebar:
     st.header("Filtros")
@@ -24,12 +47,13 @@ with st.sidebar:
     plataformas = sorted(df_raw['Platform'].dropna().unique())
     sel_plataforma = st.multiselect('Plataforma', options=plataformas, default=plataformas)
 
-    # Gênero - radio
-    sel_genero_radio = st.radio('Gênero', options=['Todos'] + sorted(df_raw['Gender'].dropna().unique().tolist()))
+    # Gênero - radio em português
+    generos_pt = ['Todos'] + [genero_traducao.get(g, g) for g in sorted(df_raw['Gender'].dropna().unique())]
+    sel_genero_radio = st.radio('Gênero', options=generos_pt)
     if sel_genero_radio == 'Todos':
         sel_genero = df_raw['Gender'].dropna().unique().tolist()
     else:
-        sel_genero = [sel_genero_radio]
+        sel_genero = [genero_reverso[sel_genero_radio]]
 
     # Faixa etária - radio
     bins   = [0, 24, 34, 44, 120]
@@ -44,22 +68,22 @@ with st.sidebar:
 
     st.divider()
 
-    # Paleta de cores por emoção - escolha livre
+    # Paleta de cores por emoção - escolha livre (em português)
     st.header("Cores por Emoção")
-    emocoes = sorted(df_raw['Dominant_Emotion'].dropna().unique())
+    emocoes_pt = sorted(emocao_traducao.values())
     cores_padrao = {
-        "Happiness":  "#4CAF50",
-        "Sadness":    "#5C9BD6",
-        "Anxiety":    "#FF7043",
-        "Anger":      "#E53935",
-        "Neutral":    "#90A4AE",
-        "Boredom":    "#AB47BC",
-        "Agression":  "#FF6F00",
+        'Felicidade': '#4CAF50',
+        'Tristeza':   '#5C9BD6',
+        'Ansiedade':  '#FF7043',
+        'Raiva':      '#E53935',
+        'Neutro':     '#90A4AE',
+        'Tédio':      '#AB47BC',
+        'Agressão':   '#FF6F00',
     }
-    EMOTION_COLORS = {}
-    for emocao in emocoes:
-        padrao = cores_padrao.get(emocao, "#888888")
-        EMOTION_COLORS[emocao] = st.color_picker(emocao, value=padrao)
+    EMOTION_COLORS_PT = {}
+    for emocao_pt in emocoes_pt:
+        padrao = cores_padrao.get(emocao_pt, '#888888')
+        EMOTION_COLORS_PT[emocao_pt] = st.color_picker(emocao_pt, value=padrao)
 
 # Aplica os filtros em todo o df
 df = df_raw[
@@ -78,7 +102,8 @@ st.divider()
 
 # Calcula as métricas
 media_tempo_uso = df['Daily_Usage_Time (minutes)'].mean()
-emocoes_dominantes = df['Dominant_Emotion'].mode()
+emocao_top_en = df['Dominant_Emotion'].mode()[0]
+emocao_top_pt = emocao_traducao.get(emocao_top_en, emocao_top_en)
 media_engajamento = df['Likes_Received_Per_Day'].mean()
 
 # Exibe os KPIs em colunas
@@ -88,7 +113,7 @@ with col1:
     st.metric(label="Tempo de uso médio", value=f"{round(media_tempo_uso, 1)} min")
 
 with col2:
-    st.metric(label="Emoção mais frequente", value=emocoes_dominantes[0])
+    st.metric(label="Emoção mais frequente", value=emocao_top_pt)
 
 with col3:
     st.metric(label="Curtidas por dia", value=round(media_engajamento, 1))
@@ -97,16 +122,16 @@ st.title("Associação por plataforma") #botar titulo nos outros eixos
 st.divider() # colocar faixa que divide sessões em todos
 
 #Eixo 1 - Associação por plataforma
-df_contagem = df.groupby(['Platform', 'Dominant_Emotion']).size().reset_index(name='Contagem')
+df_contagem = df.groupby(['Platform', 'Dominant_Emotion_PT']).size().reset_index(name='Contagem')
 
 fig_bar = px.bar(
     df_contagem,
     x='Platform',
     y='Contagem',
-    color='Dominant_Emotion',
-    color_discrete_map=EMOTION_COLORS,
+    color='Dominant_Emotion_PT',
+    color_discrete_map=EMOTION_COLORS_PT,
     barmode='stack',
-    labels={'Platform': 'Plataforma', 'Contagem': 'Quantidade de Emoções', 'Dominant_Emotion': 'Emoção'},
+    labels={'Platform': 'Plataforma', 'Contagem': 'Quantidade de Emoções', 'Dominant_Emotion_PT': 'Emoção'},
 )
 st.plotly_chart(fig_bar, use_container_width=True)
 
@@ -118,9 +143,9 @@ fig_scatter = px.scatter(
     df,
     x='Daily_Usage_Time (minutes)',
     y='Posts_Per_Day',
-    color='Dominant_Emotion',
-    color_discrete_map=EMOTION_COLORS,
-    labels={'Daily_Usage_Time (minutes)': 'Uso diário (min)', 'Posts_Per_Day': 'Postagens por dia', 'Dominant_Emotion': 'Emoção'},
+    color='Dominant_Emotion_PT',
+    color_discrete_map=EMOTION_COLORS_PT,
+    labels={'Daily_Usage_Time (minutes)': 'Uso diário (min)', 'Posts_Per_Day': 'Postagens por dia', 'Dominant_Emotion_PT': 'Emoção'},
     opacity=0.7,
 )
 st.plotly_chart(fig_scatter, use_container_width=True)
@@ -132,11 +157,11 @@ st.divider()
 # Eixo 3: Engajamento e recompensa 
 fig_box = px.box(
     df,
-    x='Dominant_Emotion',
+    x='Dominant_Emotion_PT',
     y='Likes_Received_Per_Day',
-    color='Dominant_Emotion',
-    color_discrete_map=EMOTION_COLORS,
-    labels={'Dominant_Emotion': 'Emoção dominante', 'Likes_Received_Per_Day': 'Curtidas recebidas por dia'},
+    color='Dominant_Emotion_PT',
+    color_discrete_map=EMOTION_COLORS_PT,
+    labels={'Dominant_Emotion_PT': 'Emoção dominante', 'Likes_Received_Per_Day': 'Curtidas recebidas por dia'},
 )
 fig_box.update_layout(showlegend=False)
 st.plotly_chart(fig_box, use_container_width=True)
