@@ -14,11 +14,11 @@ def create_conection():
 df_raw = create_conection()
 
 # Configuração da página
-st.set_page_config(page_title="Redes Sociais & Bem-Estar Emocional", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Redes Sociais & Bem-Estar Emocional", layout="wide")
 
 # Sidebar - Filtros globais
 with st.sidebar:
-    st.header("🔎 Filtros")
+    st.header("Filtros")
 
     plataformas = sorted(df_raw['Platform'].dropna().unique())
     sel_plataforma = st.multiselect('Plataforma', options=plataformas, default=plataformas)
@@ -36,7 +36,7 @@ with st.sidebar:
     st.divider()
 
     # Paleta de cores por emoção - escolha livre
-    st.header("🎨 Cores por Emoção")
+    st.header("Cores por Emoção")
     emocoes = sorted(df_raw['Dominant_Emotion'].dropna().unique())
     cores_padrao = {
         "Happiness":  "#4CAF50",
