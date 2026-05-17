@@ -20,18 +20,27 @@ st.set_page_config(page_title="Redes Sociais & Bem-Estar Emocional", layout="wid
 with st.sidebar:
     st.header("Filtros")
 
+    # Plataforma - multiselect (várias opções)
     plataformas = sorted(df_raw['Platform'].dropna().unique())
     sel_plataforma = st.multiselect('Plataforma', options=plataformas, default=plataformas)
 
-    generos = sorted(df_raw['Gender'].dropna().unique())
-    sel_genero = st.multiselect('Gênero', options=generos, default=generos)
+    # Gênero - radio
+    sel_genero_radio = st.radio('Gênero', options=['Todos'] + sorted(df_raw['Gender'].dropna().unique().tolist()))
+    if sel_genero_radio == 'Todos':
+        sel_genero = df_raw['Gender'].dropna().unique().tolist()
+    else:
+        sel_genero = [sel_genero_radio]
 
-    # Faixa etária (bins definidos no planejamento do projeto)
+    # Faixa etária - radio
     bins   = [0, 24, 34, 44, 120]
     labels = ['18–24', '25–34', '35–44', '45+']
     df_raw['Age'] = pd.to_numeric(df_raw['Age'], errors='coerce')
     df_raw['Faixa_Etaria'] = pd.cut(df_raw['Age'], bins=bins, labels=labels, right=True)
-    sel_faixa = st.multiselect('Faixa Etária', options=labels, default=labels)
+    sel_faixa_radio = st.radio('Faixa Etária', options=['Todas'] + labels)
+    if sel_faixa_radio == 'Todas':
+        sel_faixa = labels
+    else:
+        sel_faixa = [sel_faixa_radio]
 
     st.divider()
 
