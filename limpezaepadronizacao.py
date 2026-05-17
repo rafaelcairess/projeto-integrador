@@ -47,6 +47,14 @@ correcao = {
 }
 df_csv["Gender"] = df_csv["Gender"].replace(correcao)
 
+# Remove linhas com valores de gênero inválidos (lixo que não foi corrigido)
+generos_validos = ["Female", "Male", "Non-binary"]
+df_csv = df_csv[df_csv["Gender"].isin(generos_validos)]
+
+# Converte Age pra numérico e remove valores fora do intervalo esperado
+df_csv["Age"] = pd.to_numeric(df_csv["Age"], errors="coerce")
+df_csv = df_csv[df_csv["Age"].between(10, 100)]
+
 print(df_csv["Dominant_Emotion"].unique())
 
 # Padroniza os valores de emoção dominante
