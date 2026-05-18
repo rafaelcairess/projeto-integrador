@@ -83,7 +83,7 @@ A pesquisa busca identificar padrões estatísticos entre o consumo de conteúdo
 | **1** | Planejamento, estruturação do repositório e README inicial. | Rafael Caires Pires | ✅ Concluído |
 | **2** | ETL: Limpeza de dados nulos e padronização com Pandas. | Guilherme Martins | ✅ Concluído |
 | **3** | Persistência: Modelagem e carga dos dados no SQLite. | João | ✅ Concluído |
-| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz, Vitoria Gomez e Aline Viana | 🔜 Em andamento |
+| **4** | Desenvolvimento do Dashboard interativo no Streamlit. | Ana Flávia Ortiz, Vitoria Gomez e Aline Viana | ✅ Concluído |
 | **5** | Documentação final, testes e revisão técnica. | Todos | 🔜 Em andamento |
 
 ---
