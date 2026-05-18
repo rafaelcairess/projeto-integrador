@@ -117,6 +117,8 @@ Na barra lateral estão os filtros globais que afetam todos os gráficos simulta
 - **Emoção mais frequente** — emoção dominante entre os registros filtrados
 - **Curtidas por dia** — média de curtidas recebidas por dia
 
+<img width="1284" height="794" alt="Dashboard - KPIs e Associação por Plataforma" src="https://github.com/user-attachments/assets/ac039097-6f36-45f8-847f-529643469bdb" />
+
 ### 2. Análise por Eixo Temático
 
 **Eixo 1: Associação por Plataforma**
@@ -125,8 +127,12 @@ Gráfico de barras empilhadas mostrando a distribuição de emoções dominantes
 **Eixo 2: Exposição Temporal**
 Gráfico de dispersão relacionando tempo de uso diário (eixo X) com volume de postagens por dia (eixo Y), com os pontos coloridos pela emoção dominante do usuário.
 
+<img width="1324" height="634" alt="Dashboard - Exposição Temporal" src="https://github.com/user-attachments/assets/c927aa4c-9da9-431b-858c-28b931d56cf4" />
+
 **Eixo 3: Engajamento e Recompensa**
 Boxplot comparando a distribuição de curtidas recebidas por dia para cada emoção dominante, evidenciando se usuários com maior engajamento reportam emoções distintas.
+
+<img width="1335" height="730" alt="Dashboard - Engajamento e Recompensa" src="https://github.com/user-attachments/assets/c69d38c7-bbf9-4f1c-b02c-cb0586e5f319" />
 
 ### 3. Feature Engineering aplicado
 
