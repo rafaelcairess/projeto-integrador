@@ -1,6 +1,6 @@
 <div align="center">
 
-# Impacto das Redes Sociais no Bem-Estar Emocional
+# Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
 
 ### Projeto de ciência de dados com pipeline ETL, banco SQLite e dashboard interativo.
 
