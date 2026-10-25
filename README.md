@@ -1,17 +1,37 @@
-# Impacto das Redes Sociais na Saúde Mental e no Bem-Estar Emocional
+<div align="center">
 
-![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?logo=sqlite&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
+# Impacto das Redes Sociais no Bem-Estar Emocional
 
-Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**. Atualmente, O projeto encontra-se **concluído**, com todas as etapas entregues.
+### Projeto de ciência de dados com pipeline ETL, banco SQLite e dashboard interativo.
 
-## Dashboard Online
+<p>
+  <img alt="Status concluído" src="https://img.shields.io/badge/STATUS-CONCLUÍDO-22c55e?style=for-the-badge">
+  <a href="https://projeto-integrador-dodphybvdpndcejzzmzmyy.streamlit.app"><img alt="Dashboard online" src="https://img.shields.io/badge/DASHBOARD-ONLINE-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"></a>
+  <a href="./LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/LICENÇA-MIT-2563eb?style=for-the-badge"></a>
+</p>
 
-Acesse o dashboard publicado: [clique aqui](https://projeto-integrador-dodphybvdpndcejzzmzmyy.streamlit.app)
+<p>
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Pandas" src="https://img.shields.io/badge/Pandas-2.x-150458?style=flat-square&logo=pandas&logoColor=white">
+  <img alt="SQLite" src="https://img.shields.io/badge/SQLite-3.x-003B57?style=flat-square&logo=sqlite&logoColor=white">
+  <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-1.x-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+</p>
+
+[**Acessar o dashboard**](https://projeto-integrador-dodphybvdpndcejzzmzmyy.streamlit.app) ·
+[Ver objetivos](#-objetivos-da-análise) ·
+[Conhecer o pipeline](#-transformações-de-dados-aplicadas)
+
+<br>
+
+<img width="1284" alt="Dashboard com KPIs e associação entre plataformas e emoções" src="https://github.com/user-attachments/assets/ac039097-6f36-45f8-847f-529643469bdb">
+
+</div>
+
+## Sobre o projeto
+
+Este repositório documenta o Projeto Integrador da disciplina **Desenvolvimento Low Code em Ciência de Dados**, do curso de Análise e Desenvolvimento de Sistemas (ADS) no **Senac**. O trabalho foi desenvolvido em grupo e encontra-se **concluído**, com todas as etapas entregues.
+
+A análise investiga relações entre uso de redes sociais, engajamento e emoções predominantes. Os dados passam por limpeza e padronização com Pandas, são persistidos em SQLite e apresentados em um dashboard Streamlit com filtros e visualizações interativas.
 
 ---
 
@@ -116,8 +136,6 @@ Na barra lateral estão os filtros globais que afetam todos os gráficos simulta
 - **Tempo médio de uso** — média de minutos diários no dataset filtrado
 - **Emoção mais frequente** — emoção dominante entre os registros filtrados
 - **Curtidas por dia** — média de curtidas recebidas por dia
-
-<img width="1284" height="794" alt="Dashboard - KPIs e Associação por Plataforma" src="https://github.com/user-attachments/assets/ac039097-6f36-45f8-847f-529643469bdb" />
 
 ### 2. Análise por Eixo Temático
 
